@@ -23,7 +23,15 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation(libs.ktor.core)
+                implementation(libs.ktor.logging)
+                implementation(libs.ktor.negotiation)
+                implementation(libs.ktor.client.serialization)
+                implementation(libs.ktor.serialization.kotlinx)
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
