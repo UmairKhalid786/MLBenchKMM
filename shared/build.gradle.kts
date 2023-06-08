@@ -30,6 +30,9 @@ kotlin {
                 implementation(libs.ktor.negotiation)
                 implementation(libs.ktor.client.serialization)
                 implementation(libs.ktor.serialization.kotlinx)
+
+                implementation(libs.jetbrains.serialization)
+                implementation(libs.kotlinx.coroutines.core)
             }
         }
         val commonTest by getting {
