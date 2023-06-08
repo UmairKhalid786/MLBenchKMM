@@ -5,8 +5,7 @@ import io.ktor.client.HttpClientConfig
 import io.ktor.client.engine.okhttp.OkHttp
 import java.util.concurrent.TimeUnit
 
-class AndroidPlatform : Platform {
-    override val name: String = "Android ${android.os.Build.VERSION.SDK_INT}"
+class AndroidNativeClient : NativeClient {
     override fun httpClient(config: HttpClientConfig<*>.() -> Unit)   = HttpClient(OkHttp) {
         config(this)
 
@@ -19,4 +18,4 @@ class AndroidPlatform : Platform {
     }
 }
 
-actual fun getPlatform(): Platform = AndroidPlatform()
+actual fun getNetworkClient(): NativeClient = AndroidNativeClient()

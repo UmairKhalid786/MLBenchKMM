@@ -3,9 +3,8 @@ package com.techlads.mlbench
 import io.ktor.client.HttpClient
 import io.ktor.client.HttpClientConfig
 
-interface Platform {
-    val name: String
+interface NativeClient {
     fun httpClient(config: HttpClientConfig<*>.() -> Unit): HttpClient
 }
 
-expect fun getPlatform(): Platform
+expect fun getNetworkClient(): NativeClient
