@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.techlads.mlbench.data.ContentResponse
-import com.techlads.mlbench.domain.GetWeatherUseCase
+import com.techlads.mlbench.domain.GetTrendingMoviesUseCase
 import com.techlads.mlbench.network.Resource
 
 
@@ -50,7 +50,7 @@ fun MoviesContent() {
     }
 
     LaunchedEffect(key1 = Unit) {
-        content.value = GetWeatherUseCase().invoke()
+        content.value = GetTrendingMoviesUseCase().invoke()
     }
 
     when (content.value.status) {

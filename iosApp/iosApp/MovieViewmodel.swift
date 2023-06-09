@@ -15,7 +15,7 @@ class MoviesViewModel : ObservableObject {
     @Published var appState = Resource<ContentResponse>(status: ResourceStatus.loading, data: nil, message: nil, error: nil)
     
     init() {
-        GetWeatherUseCase().invoke { result, error in
+        GetTrendingMoviesUseCase().invoke { result, error in
             if(result != nil) {
                 self.appState = result!
             }
