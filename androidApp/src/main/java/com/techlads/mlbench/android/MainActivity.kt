@@ -55,8 +55,7 @@ fun MoviesContent() {
 
     when (content.value.status) {
         Resource.Status.SUCCESS -> {
-            MoviesList(content.value.data?.results?.filter { it.title?.isNotBlank() ?: false }
-                ?: emptyList())
+            MoviesList(content.value.data?.results ?: emptyList())
         }
 
         Resource.Status.ERROR -> {

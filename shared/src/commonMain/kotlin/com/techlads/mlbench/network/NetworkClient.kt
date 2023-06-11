@@ -18,7 +18,8 @@ import io.ktor.http.HttpHeaders
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-const val IMDB_TOKEN = "{PLEASE_ADD_YOUR_IMDB_TOKEN_HERE}"
+// TODO: Don't push this to git
+const val IMDB_TOKEN = ""
 
 object NetworkClient {
     private val client = getNetworkClient()
@@ -49,6 +50,7 @@ object NetworkClient {
 
         install(DefaultRequest) {
             header(HttpHeaders.ContentType, ContentType.Application.Any)
+            header("platform",  client.getPlatformName())
         }
     }
 }

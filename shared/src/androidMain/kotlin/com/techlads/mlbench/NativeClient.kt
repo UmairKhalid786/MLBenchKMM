@@ -16,6 +16,8 @@ class AndroidNativeClient : NativeClient {
             }
         }
     }
+
+    override fun getPlatformName() = "Android"
 }
 
 actual fun getNetworkClient(): NativeClient = AndroidNativeClient()

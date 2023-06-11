@@ -5,6 +5,7 @@ import io.ktor.client.HttpClientConfig
 
 interface NativeClient {
     fun httpClient(config: HttpClientConfig<*>.() -> Unit): HttpClient
+    fun getPlatformName(): String
 }
 
 expect fun getNetworkClient(): NativeClient
